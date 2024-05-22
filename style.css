@@ -2,7 +2,6 @@
 body {
     font-family: arial;
     margin: 0;
-    padding: 5%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,14 +11,15 @@ body {
 }
 
 h1{
-    color: #333133;
+    padding-top: -450px;
+    color: #333133
 }
 
 .image{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 4%;
+    margin: 5%;
     width: 200px;
     width: 200px;
 }
@@ -32,13 +32,10 @@ h1{
 
 .container{
     display: block;
-    width: 900px;
-    height: 9000px;
-    background: #FEFCFE;
+    width: 100vh;
 }
 
 .button{
-    margin: 5%;
     border-radius: 90px;
     position: relative;
     width: 110px;
@@ -59,7 +56,40 @@ h1{
 }
 
 .buttonconteinar{
+    margin-top: 15%;
     position: relative;
     display: flex;
     justify-content: center;
+}
+
+@keyframes dark-active {
+    0%{
+        left: 4%;
+    }
+    100%{
+        left: 47%;
+    }
+}
+@keyframes light-active {
+    0%{
+        left: 47%;
+    }
+    100%{
+        left: 4%;
+    }
+}
+
+@keyframes imgAnimation {
+    0% {
+        transform: translateY(-200px) scale(0.5) rotate(0deg);
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(50px) scale(1) rotate(10deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0) scale(1) rotate(0deg);
+        opacity: 1;
+    }
 }
