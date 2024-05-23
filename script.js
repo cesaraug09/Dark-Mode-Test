@@ -4,25 +4,29 @@ let buttonback = document.querySelector('.button');
 let img = document.querySelector('.image')
 var cont = 0;
 var num =0;
+let checker = "true";
 
 function changeBackground1(){
+    checker = "false"
     if (num <= 110 ) {
         document.body.style.background = `linear-gradient(90deg, #323032 ${num}%, #FFFFFF 0%`;
         num+=1.5;
         setTimeout(changeBackground1, 1);
-    }
+    } else checker = "true"
 }
 
 function changeBackground2(){
+    checker = "false"
     if (num >= -10) {
         document.body.style.background = `linear-gradient(90deg, #323032 ${num}%, #FFFFFF 0%`;
         num-=1.5;
         setTimeout(changeBackground2, 1);
-    }
+    } else checker = "true"
 }
 
 
 function active(){
+    if(checker == "true"){
     if(cont%2==0){
         img.src = "icons/moon.png";
         button.style.animation = "dark-active 0.25s ease-in-out";
@@ -32,7 +36,6 @@ function active(){
         buttonback.style.boxShadow = "1px 2px 10px #56a8ff67";
         cont++;
         changeBackground1();
-        console.log(num)
         text.innerText="Modo Escuro";
         text.style.color = "#FFFFFF";
         text.style.animation = "opa 0.5s ease-in-out";
@@ -46,7 +49,6 @@ function active(){
         document.body.style.background = "#323032";
         cont--;
         changeBackground2();
-        console.log(num)
         text.innerText = "Modo Claro";
         text.style.color = "#CBCBCB";
         text.style.animation = "opa 0.5s ease-in-out";
@@ -54,5 +56,5 @@ function active(){
     setTimeout(()=>{
         text.style.animation = "none";
         img.style.animation = "none";
-    },600);
+    },600);}
 }
