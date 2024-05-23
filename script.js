@@ -2,6 +2,7 @@ let text = document.getElementById('text');
 let button = document.querySelector('.circle');
 let buttonback = document.querySelector('.button');
 let img = document.querySelector('.image')
+let title = document.querySelector('.title')
 var cont = 0;
 var num =0;
 let checker = "true";
@@ -37,6 +38,7 @@ function active(){
         cont++;
         changeBackground1();
         text.innerText="Modo Escuro";
+        title.innerText="Dark 🌙"
         text.style.color = "#FFFFFF";
         text.style.animation = "opa 0.5s ease-in-out";
     } else{
@@ -50,6 +52,7 @@ function active(){
         cont--;
         changeBackground2();
         text.innerText = "Modo Claro";
+        title.innerText="Light 🔅"
         text.style.color = "#CBCBCB";
         text.style.animation = "opa 0.5s ease-in-out";
     }
